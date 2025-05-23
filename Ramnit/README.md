@@ -21,7 +21,7 @@ We have to find the suspicious activity so I use `pslist` to show the processes.
 
 All is normal, however there is a setup process: `ChromeSetup.exe`
 
-To define if there is suspicious or not, I will dump all related file in that process and check the .exe file.
+To define if there is suspicious or not, I will dump all related file in that process and check the `.exe` file.
 
 ```bash
 python3 ~/Desktop/tools/volatility3/vol.py -o "dump_dir" -f memory.dmp windows.dumpfiles --pid 4628
@@ -32,7 +32,6 @@ python3 ~/Desktop/tools/volatility3/vol.py -o "dump_dir" -f memory.dmp windows.d
 I will check it on Virustotal
 
 ![image](./assets/3.png)
-
 
 Well, it's suspicious activity
 
@@ -80,16 +79,14 @@ I checked in VirusTotal (Tab "Relations")
 
 ![image](./assets/9.png)
 
--> Answer: `dnsnb8.net`
-
-
 ### Final Answer
 
-| Question | Flag |
+| Question | Answer |
 |---|----|
 | Question 1 | `ChromeSetup.exe` | 
 | Question 2 | `C:\Users\alex\Downloads\ChromeSetup.exe` | 
 | Question 3 | `58.64.204.181` |
 | Question 4 | `Hong Kong` |
 | Question 5 | `280c9d36039f9432433893dee6126d72b9112ad2`|
-| Question 6 | sk-3498fwe09r8fw3f98fw9832fw |
+| Question 6 | `2019-12-01 08:36` |
+| Question 7 | `dnsnb8.net` |
