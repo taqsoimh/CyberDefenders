@@ -90,8 +90,3 @@ I checked in VirusTotal (Tab "Relations")
 | Question 5 | `280c9d36039f9432433893dee6126d72b9112ad2`|
 | Question 6 | `2019-12-01 08:36` |
 | Question 7 | `dnsnb8.net` |
-<<<<<<< HEAD
-=======
-
-
->>>>>>> c49210723552a11bf667bc43514419bb735f1f6a
