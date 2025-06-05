@@ -124,7 +124,7 @@ Well, malware analyst time. I use IDA Pro to do it. But first DetectItEasy detec
 
 ![image](./assets/22.png)
 
-Load it into IDA Pro, we see a function name ``. The name says it all, function to make request to server
+Load it into IDA Pro, we see a function name `requestFile`. The name says it all, function to make request to server
 
 ![image](./assets/23.png)
 
