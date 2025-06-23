@@ -1,4 +1,6 @@
-# Ramnit Lab
+# FakeGPT Lab
+
+### Link: https://cyberdefenders.org/blueteam-ctf-challenges/fakegpt/
 
 ### Scenario
 
