@@ -1,5 +1,7 @@
 # DeepDive Lab
 
+### Lab's link: https://cyberdefenders.org/blueteam-ctf-challenges/deepdive/
+
 ### Scenario
 You have given a memory image for a compromised machine. As a security blue team analyst Analyze the image and figure out attack details.
 
