@@ -1,5 +1,7 @@
 # EscapeRoom Lab
 
+### Link: https://cyberdefenders.org/blueteam-ctf-challenges/escaperoom/
+
 ### Scenario
 
 You as a SOC analyst belong to a company specializing in hosting web applications through KVM-based Virtual Machines. Over the weekend, one VM went down, and the site administrators fear this might be the result of malicious activity. They extracted a few logs from the environment in hopes that you might be able to determine what happened.
