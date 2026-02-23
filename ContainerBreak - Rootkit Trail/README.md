@@ -14,68 +14,68 @@ Days later, the compromised server exhibited suspicious behavior - hidden proces
 
 We can find the kernel version on `live_response/hardware/dmesg.txt`
 
-img
+![image](./assets/1.png)
 
 #### Question 2: What is the hostname of the compromised system?
 
 We can find answer in `/etc/hostname`
 
-img
+![image](./assets/2.png)
 
 #### Question 3: What is the current kernel taint value at the time of collection?
 
 We can find answer in `live_response/system/cat_proc_sys_kernel_tainted.txt`
 
-img
+![image](./assets/3.png)
 
 #### Question 4: A malicious kernel module was loaded on the compromised machine. What is the name of this module?
 
 We can file module which load to kernel on `/lib//modules`. In this folder, we found only one file which is `sysperf.ko`. This is abnormal. If we read a little bit this file, I confirm it's a rootkit.
 
-img
+![image](./assets/4.png)
 
 #### Question 5: At what dmesg timestamp was the rootkit module first loaded? (seconds.microseconds)
 
 We can use cat and grep: `cat ./live_response/hardware/dmesg.txt | grep -i sysperf`
 
-img
+![image](./assets/5.png)
 
 #### Question 6: What is the absolute UTC timestamp when the rootkit was loaded? Convert the dmesg timestamp accordingly.
 
 In the previous question, we determined the timestamp which rootkit first loaded is `9127.292300`. We can find absolute UTC timestamp on syslog*: `cat ./var/log/syslog* | grep "9127.292300"`
 
-img
+![image](./assets/6.png)
 
 #### Question 7: What C2 server IP address and port are configured in the rootkit?
 
 Easy to answer this, we can find by using the name "sysperf"
 
-img
+![image](./assets/7.png)
 
 #### Question 8: The threat actor created a systemd service to maintain persistence on the compromised machine. What is the full path to this service file?
 
 
 The reason why the threat actor created a systemd service because systemd component is similar to "autorun service" in Windows. It starts services at boot and keeps it running. We can find it on `/etc/systemd/system`
 
-img
+![image](./assets/8.png)
 
 #### Question 9: The systemd service file specifies a command to run upon startup. What is the exact command configured in this service file?
 
 Read the file `sysperf.service` we can determine the command upon startup
 
-img
+![image](./assets/9.png)
 
 #### Question 10: The systemd service persistence results in a root-owned process that maintains a reverse shell loop. What is the PID of this process?
 
 We can find it on `psaux` log: `cat live_response/process/ps_auxwww.txt`
 
-img
+![image](./assets/10.png)
 
 #### Question 11: The rootkit maintains persistence through a reverse shell connection. What is the full command line of this persistent reverse shell?
 
 We can find the result in previous answer
 
-img
+![image](./assets/11.png)
 
 #### Question 12: What is the SHA256 hash of the rootkit kernel module?
 
